@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import DoctorCard from './DoctorCard';
-
+import './Doctor.css';
 
 const Doctors = () => {
   const [doctors,setDoctors]=useState([]);
@@ -71,7 +71,22 @@ const Doctors = () => {
     <div className='main-doc-container'>
       <div className="form-section">
         <h4>{isEditMode?'Edit Doctor':'Add New Doctor'}</h4>
-        
+        <form action="" onSubmit={isEditMode?(e)=>handleUpdateDoctor(selectedDoctor._id,e):handleAddDoctor}>
+          <label htmlFor="">Name: </label>
+          <input type="text" value={isEditMode?selectedDoctor.name:newDoctor.name} onChange={(e)=>isEditMode? setSelectedDoctor({...selectedDoctor,name:e.target.value}): setNewDoctor({...newDoctor,name:e.target.value})} />
+          <label htmlFor="">Specialty: </label>
+          <input type="text" value={isEditMode?selectedDoctor.specialty:newDoctor.specialty} onChange={(e)=>isEditMode? setSelectedDoctor({...selectedDoctor,specialty:e.target.value}): setNewDoctor({...newDoctor,specialty:e.target.value})} />
+          <br />
+          <button type="submit">{isEditMode ? 'Update Doctor' : 'Add Doctor'}</button>
+        </form>
+      </div>
+      <div className="doctors-section">
+        <h3>Doctors ({doctors.length})</h3>
+        <div className="doctor-list">
+          {doctors.map(doctor=>(
+            <DoctorCard key={doctor._id} doctor={doctor} onEdit={handleEditDoctor} onDelete={handleDeleteDoctor} />
+          ))}
+        </div>
       </div>
     </div>
   )

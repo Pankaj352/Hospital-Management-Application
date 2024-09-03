@@ -1,8 +1,16 @@
 import React from 'react'
-
-const DoctorCard = () => {
+import './Doctor.css'
+const DoctorCard = ({doctor,onEdit, onDelete}) => {
+  
   return (
-    <div>DoctorCard</div>
+    <div className="doctor-card">
+      <p>{doctor.name} - {doctor.specialty}</p>
+
+      <div className="btn-container">
+        <button onClick={()=> onEdit(doctor)}>Edit</button>
+        <button onClick={()=> onDelete(doctor)}>Delete</button>
+      </div>
+    </div>
   )
 }
 
