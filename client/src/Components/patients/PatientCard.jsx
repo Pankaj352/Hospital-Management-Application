@@ -1,4 +1,5 @@
 import React from 'react'
+import './patients.css';
 
 const PatientCard = () => {
   return (

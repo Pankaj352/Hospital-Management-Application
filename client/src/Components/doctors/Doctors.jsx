@@ -24,7 +24,6 @@ const Doctors = () => {
 
   const handleAddDoctor = (e)=>{
     e.preventDefault();
-
     axios.post('http://localhost:5000/doctors/add',newDoctor).then(res=> {
       console.log(res.data);
       setDoctors([...doctors,res.data]);
@@ -33,7 +32,7 @@ const Doctors = () => {
         specialty:''
       });
     }).catch(error=>{
-      console.error('Error while adding doctors');
+        console.error('Error while adding doctors');
     });
   }
 
@@ -44,7 +43,6 @@ const Doctors = () => {
       const updateDoctor={...selectedDoctor,_id:id};
       console.log('update doctor',updateDoctor);
       setDoctors(doctors.map(doctor=>(doctor._id?updateDoctor:doctor)));
-
       setSelectedDoctor(null);
       setIsEditMode(false);
     }).catch(error=>{
@@ -56,7 +54,6 @@ const Doctors = () => {
     axios.delete(`http://localhost:5000/doctors/delete/${id}`).then(res=>{
       console.log(res.data);
       setDoctors(doctors.filter(doctor=>(doctor._id.id)));
-
     }).catch(error=>{
       console.error('Error while deleting doctor');
     })
