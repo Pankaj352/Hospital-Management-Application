@@ -13,7 +13,7 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        <h1>Hospital Management System</h1>
+        <h1 className='brand' >Hospital Management System</h1>
 
         <nav>
           <ul>

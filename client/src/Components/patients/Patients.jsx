@@ -72,7 +72,7 @@ const Patients = () => {
   return (
     <div className="patient-main">
       <div className="form-section">
-        <h4>{isEditMode ? "Edit Patient" : "Add New Patient"}</h4>
+        <h4 className="add-patient-card">{isEditMode ? "Edit Patient" : "Add New Patient"}</h4>
         <form
           action=""
           onSubmit={
@@ -133,6 +133,11 @@ const Patients = () => {
 
       <div className="patients-section">
         <h3>Patients ({patients.length})</h3>
+        <div className="patient-list">
+          {patients.map(patient=>(
+            <PatientCard key={patient._id}  patient={patient} onEdit={handleEditPatient} onDelete={handleDeletePatient} />
+          ))}
+        </div>
       </div>
     </div>
   );
