@@ -1,19 +1,23 @@
-*{
+/* Global Styles */
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-.container{
+
+.container {
   max-width: 90vw;
   margin: 0 auto;
   padding: 20px 150px;
   background-color: #f5eee6;
-  
 }
-.brand{
+
+.brand {
   padding-bottom: 10px;
 }
-nav{
+
+nav {
   background-color: #00a7aa;
   border-radius: 10px;
   padding: 18px;
@@ -21,31 +25,32 @@ nav{
   justify-content: space-between;
 }
 
-ul{
+ul {
   list-style: none;
-  padding: 0;margin: 0;display: flex;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
-li
-{
+li {
   margin-right: 20px;
 }
 
-a{
+a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;  
+  font-weight: bold;
 }
-a:hover{
+
+a:hover {
   color: #ffd700;
 }
 
-.active
-{
+.active {
   color: #ffd700;
 }
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,11 +58,113 @@ a:hover{
   padding: 10px;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+
+/* Responsive Styles */
+
+/* For large screens (desktops and laptops) */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80vw;
+    padding: 20px 100px;
+  }
+
+  nav {
+    padding: 20px;
+  }
+
+  .flex-column {
+    padding: 20px;
+  }
+
+  .flex-row {
+    padding: 20px;
+  }
+}
+
+/* For medium screens (tablets) */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    max-width: 90vw;
+    padding: 20px 50px;
+  }
+
+  nav {
+    padding: 15px;
+  }
+
+  .flex-column {
+    padding: 15px;
+  }
+
+  .flex-row {
+    padding: 15px;
+  }
+}
+
+/* For small screens (mobile devices) */
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 95vw;
+    padding: 10px 20px;
+  }
+
+  nav {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .flex-column {
+    padding: 10px;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+/* For extra small screens (small mobile devices) */
+
+@media (max-width: 479px) {
+  .container {
+    max-width: 98vw;
+    padding: 5px 10px;
+  }
+
+  nav {
+    padding: 5px;
+  }
+
+  .flex-column {
+    padding: 5px;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
 }

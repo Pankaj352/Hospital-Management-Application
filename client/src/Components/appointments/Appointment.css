@@ -1,47 +1,67 @@
-/*============ AppointmentCard.jsx ===============*/
-.appointment-card {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  /* Appointment Card Styles */
+  
+.appointment-main{
+  display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.form-section {
+  width: 60%;
+  height: 400px;
+}
+
+  .appointment-card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
     padding: 16px;
     margin: 16px 0;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-
+  
     &:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
-
+  
     p {
-        font-size: 16px;
-        margin-bottom: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
-
-    p {
-        span {
-            font-weight: 900;
-        }
+  
+    p span {
+      font-weight: 900;
     }
-
+  
     button {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        margin-right: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #002e5f;
-        }
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      margin-right: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #002e5f;
+      }
     }
-}
-
-/*============ Appointment.jsx ===============*/
-
-.appointment-form {
+  }
+  
+  /* Appointment Form Styles */
+  
+  .appointment-form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -49,34 +69,34 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.appointment-form h4 {
+  }
+  
+  .appointment-form h4 {
     font-size: 24px;
     margin-bottom: 20px;
-}
-
-.appointment-form label {
+  }
+  
+  .appointment-form label {
     display: block;
     margin-bottom: 8px;
-}
-
-.appointment-form input {
+  }
+  
+  .appointment-form input {
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-input[type="date"]{
+  }
+  
+  input[type="date"] {
     padding: 5px;
     margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.appointment-form button {
+  }
+  
+  .appointment-form button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -84,23 +104,92 @@ input[type="date"]{
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+  
     &:hover {
-        background-color: #0056b3;
+      background-color: #0056b3;
     }
-}
-
-.appointments {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 30vw;
-
-}
-
-.add-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 250px;
+  }
+  
+  /* Responsive Styles */
+  
+  /* For large screens (desktops and laptops) */
+  
+  @media (min-width: 1200px) {
+    .appointments {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 30vw;
+    }
+  
+    .add-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 250px;
+    }
+  }
+  
+  /* For medium screens (tablets) */
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .appointments {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 40vw;
+    }
+  
+    .add-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 200px;
+    }
+  
+    .appointment-card {
+      width: 250px;
+    }
+  }
+  
+  /* For small screens (mobile devices) */
+  
+  @media (max-width: 767px) {
+    .appointments {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 80vw;
+    }
+  
+    .add-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 150px;
+    }
+  
+    .appointment-card {
+      width: 200px;
+    }
+  
+    .appointment-form {
+      max-width: 300px;
+    }
+  }
+  
+  /* For extra small screens (small mobile devices) */
+  
+  @media (max-width: 479px) {
+    .appointments {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 90vw;
+    }
+  
 }

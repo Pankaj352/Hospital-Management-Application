@@ -65,7 +65,7 @@ const Doctors = () => {
     setIsEditMode(true);
   }
   return (
-    <div className='main-doc-container'>
+    <div className='doctor-main'>
       <div className="form-section">
         <h4>{isEditMode?'Edit Doctor':'Add New Doctor'}</h4>
         <form action="" onSubmit={isEditMode?(e)=>handleUpdateDoctor(selectedDoctor._id,e):handleAddDoctor}>

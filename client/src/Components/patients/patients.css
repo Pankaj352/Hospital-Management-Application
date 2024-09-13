@@ -1,131 +1,166 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .patient-main {
   display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     align-content: stretch;
     justify-content: space-evenly;
     align-items: baseline;
+    flex-direction: row;
 }
 
-.form-sections {
-  width: 60%;
-  margin-right: 20px;
-  height: 400px;
+
+.form-section{
+  h4 {
+    margin: 10px 0;
+  }
 }
-.add-patient-card {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
+
+
 
 form {
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
-  margin-bottom: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.02);
   }
+  input[type="text"] {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 16px;
+  }
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 5px;
-  font-size: 20px;
-  border-radius: 6px;
-  border: 1px solid #000;
-  margin-top: 5px;
-}
 
-.patients-section {
-  width: 30%;
-  margin-left: 20px;
-}
 
-.patient-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 300px;
-  padding: 16px;
-  margin: 16px 0;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-
-  h4 {
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin: 8px 0;
-  }
-  button {
-    margin-top: 8px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px;
-    cursor: pointer;
-
+  .patient-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  
     &:hover {
-      background-color: #0056b3;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    p {
+      margin: 8px 0;
+    }
+    button {
+      margin-top: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
     }
   }
-}
 
-.patient-main {
-  display: flex;
-}
+  .patients-section> h4{
+    text-align: center;
+  }
+
+  .patients-section{
+    
+      width: 30%;
+      margin-left: 20px;
+  
+    
+  }
 
 .form-group {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.patient-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.02);
+/* Responsive Styles */
+
+/* For large screens (desktops and laptops) */
+
+@media (min-width: 1200px) {
+  .patient-main {
+    flex-direction: row;
   }
 
-  h4 {
-    margin-bottom: 8px;
+  .form-section {
+    width: 60%;
   }
 
-  p {
-    margin: 8px 0;
-  }
-
-  button {
-    margin-top: 8px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0056b3;
-    }
+  .patients-section {
+    width: 30%;
   }
 }
 
-@media screen() {
-    
+/* For medium screens (tablets) */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .patient-main {
+    flex-direction: row;
+  }
+
+  .form-section {
+    width: 50%;
+  }
+
+  .patients-section {
+    width: 40%;
+  }
+}
+
+/* For small screens (mobile devices) */
+
+@media (max-width: 767px) {
+  .patient-main {
+    flex-direction: column;
+  }
+
+  .form-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .patients-section {
+    width: 100%;
+  }
+}
+
+/* For extra small screens (small mobile devices) */
+
+@media (max-width: 479px) {
+  .patient-main {
+    flex-direction: column;
+  }
+
+  .form-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .patients-section {
+    width: 100%;
+  }
+
+  .patient-card {
+    width: 250px;
+  }
 }

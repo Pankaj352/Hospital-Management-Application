@@ -4,15 +4,15 @@ const AppointmentCard = ({appointment, onEdit, onDelete}) => {
   return (
     <div className="appointment-card">
         <p>
-            <span>Patient:</span>
+            <span>Patient : </span>
             {appointment.patientName}
         </p>
         <p>
-            <span>Doctor:</span>
+            <span>Doctor : </span>
             {appointment.doctorName}
         </p>
         <p>
-            <span>Date:</span>
+            <span>Date : </span>
             {new Date(appointment.date).toLocaleDateString()}
         </p>
 
@@ -25,3 +25,4 @@ const AppointmentCard = ({appointment, onEdit, onDelete}) => {
 }
 
 export default AppointmentCard
+

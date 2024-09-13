@@ -91,9 +91,9 @@ const Appointments = () => {
   };
 
   return (
-    <div className="flex-row" style={{ width: "100%" }}>
-      <div className="flex-column">
-        <div className="add-form">
+    <div className="appointment-main">
+      
+        <div className="form-section">
           <h4>{isEditMode ? "Edit Appointment" : "Add New Appointment"}</h4>
           <form
             className="appointment-form"
@@ -172,7 +172,7 @@ const Appointments = () => {
             </button>
           </form>
         </div>
-      </div>
+      
       <div className="appointments">
         <h3>Appointments ({appointments.length})</h3>
         <div className="appointment-list">

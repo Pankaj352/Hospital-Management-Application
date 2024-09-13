@@ -4,7 +4,8 @@ const DoctorCard = ({doctor,onEdit, onDelete}) => {
   
   return (
     <div className="doctor-card">
-      <p>{doctor.name} - {doctor.specialty}</p>
+      <p>Name : {doctor.name}</p>
+      <p>Specialty : {doctor.specialty}</p>
 
       <div className="btn-container">
         <button onClick={()=> onEdit(doctor)}>Edit</button>
@@ -14,4 +15,4 @@ const DoctorCard = ({doctor,onEdit, onDelete}) => {
   )
 }
 
-export default DoctorCard
+export default DoctorCard;

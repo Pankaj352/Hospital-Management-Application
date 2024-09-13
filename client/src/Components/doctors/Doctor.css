@@ -1,87 +1,92 @@
-.main-doc-container {
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .doctor-main {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-direction: row;
+  }
 
-.doctors-section {
-    width: 45%;
-    height: 100vh;
-    text-align: center;
-    margin-left: 16px;
-    
-}
 
-.doctor-card {
+  
+  .doctors-section {
+    width: 30%;
+    margin-left: 20px;
+
+  }
+  
+  .doctor-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
+    margin-top: 15px;
     margin-bottom: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-
+  
     &:hover {
-        transform: scale(1.02);
+      transform: scale(1.02);
     }
-
+  
     p {
-        margin: 0;
+      margin: 0;
     }
-
+  
     button {
-        margin-top: 8px;
-        cursor: pointer;
+      margin-top: 8px;
+      cursor: pointer;
     }
-}
-
-/* Add the form section styles */
-
-.form-sections {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    width: 45%;
-    margin-bottom: 306px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+  }
+  
+  .form-section { 
+    width: 60%;
+    margin-right: 20px;
+    height: 400px;
     h4 {
-        margin-bottom: 16px;
-        text-align: center;
+      margin-bottom: 16px;
+      text-align: center;
     }
-
+  
     form {
-        display: flex;
-        flex-direction: column;
-
-        label {
-            margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        margin-bottom: 8px;
+      }
+  
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+      }
+  
+      button {
+        align-self: flex-start;
+        padding: 8px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
         }
-
-        input {
-            padding: 8px;
-            margin-bottom: 16px;
-        }
-
-        button {
-            align-self: flex-start;
-            padding: 8px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #0056b3;
-            }
-        }
+      }
     }
-}
-
-button {
+  }
+  
+  button {
     margin-top: 8px;
     cursor: pointer;
     background-color: #007bff;
@@ -90,14 +95,69 @@ button {
     border-radius: 4px;
     padding: 8px;
     cursor: pointer;
-
+  
     &:hover {
-        background-color: #0056b3;
+      background-color: #0056b3;
     }
-}
-
-.btn-container {
+  }
+  
+  .btn-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-}
+  }
+  
+  /* Responsive Styles */
+  
+  /* For large screens (desktops) */
+  @media (min-width: 1200px) {
+    .doctor-main {
+      flex-direction: row;
+    }
+  
+    .doctors-section {
+      width: 40%;
+    }
+  
+    .form-section {
+      width: 40%;
+    }
+  }
+  
+  /* For medium screens (tablets) */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .doctor-main {
+      flex-direction: column;
+    }
+  
+    .doctors-section {
+      width: 80%;
+      margin: 16px auto;
+    }
+  
+    .form-section {
+      width: 80%;
+      margin: 16px auto;
+    }
+  }
+  
+  /* For small screens (mobile devices) */
+  @media (max-width: 767px) {
+    .main-doc-container {
+      flex-direction: column;
+    }
+  
+    .doctors-section {
+      width: 90%;
+      margin: 16px auto;
+    }
+  
+    .form-section {
+      width: 90%;
+      margin: 16px auto;
+    }
+  
+    .doctor-card {
+      margin-bottom: 8px;
+    }
+  }
